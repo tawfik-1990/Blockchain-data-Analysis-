@@ -519,7 +519,7 @@ weightedoutdegree_sub_sort<-weightedoutdegree_sub[order(weightedoutdegree_sub$ou
 
 df<-rbind(df, data.frame(Adresse= publickey$adress[i],most_sender = outdegree_df_all_sub[1,1]
 ))
-'
+
 # ego_all_r<-ego(ig_all, order = 1, nodes = which(V(ig_all)$name==i), mode =  "out", mindist = 0)
 # ed_ego_all_r<- as_ids(ego_all_r[[1]][[name]] )
 # eg_r<-data.frame(ed_ego_all_r)
