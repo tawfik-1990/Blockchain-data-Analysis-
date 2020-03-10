@@ -155,12 +155,12 @@ write_graph(ig.sub_haupt, "graph_community.graphml", format ="graphml")
 
 ig5 <- graph_from_data_frame(ede, directed=TRUE)
 
-#make to datframe with name
+#claclute degree of users 
 indegree<- degree(ig5,  mode = "in")
 indegree_df<-data.frame(Name=V(ig5)$name,indegree=as.vector(indegree))
 indegree_df<-indegree_df[order(indegree_df$indegree,decreasing = TRUE),]
 
-#make to datframe with name
+
 outdegree<- degree(ig5,  mode = "out")
 outdegree_df<-data.frame(Name=V(ig5)$name,outdegree=as.vector(outdegree))
 outdegree_df<-outdegree_df[order(outdegree_df$outdegree,decreasing = TRUE),]
@@ -519,7 +519,7 @@ weightedoutdegree_sub_sort<-weightedoutdegree_sub[order(weightedoutdegree_sub$ou
 
 df<-rbind(df, data.frame(Adresse= publickey$adress[i],most_sender = outdegree_df_all_sub[1,1]
 ))
-
+'
 # ego_all_r<-ego(ig_all, order = 1, nodes = which(V(ig_all)$name==i), mode =  "out", mindist = 0)
 # ed_ego_all_r<- as_ids(ego_all_r[[1]][[name]] )
 # eg_r<-data.frame(ed_ego_all_r)
